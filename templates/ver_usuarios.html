@@ -1,0 +1,47 @@
+{% extends 'base/base.html'%} {%block content%} {%if usuarios%}
+
+<div>
+    <br><br>
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Serie</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Apellidos</th>
+                    <th scope="col">Movil</th>
+                    <th scope="col">Correo</th>
+                    <th scope="col">Provincia</th>
+                    <th scope="col">Pais</th>
+                </tr>
+            </thead>
+            <tbody>
+                {%for usuario in usuarios%}
+                <tr>
+                    <th scope="row">{{usuario.id}}</th>
+                    <td>{{usuario.num_serie}}</td>
+                    <td>{{usuario.nombre}}</td>
+                    <td>{{usuario.apellido}}</td>
+                    <td>{{usuario.movil}}</td>
+                    <td>{{usuario.email}}</td>
+                    <td>{{usuario.provincia}}</td>
+                    <td>{{usuario.pais}}</td>
+                </tr>
+
+                {%endfor%}
+
+            </tbody>
+        </table>
+
+        {%else%}
+            <h1>No tengo datos de usuarios, todavia</h1>
+        {%endif%}
+        
+        <div class="d-grid gap-2 d-md-flex justify-content-md-center">
+            <input class="btn btn-primary" value="Volver" onclick="location.href='/'">
+        </div>
+
+        {%endblock%}}
+
+    </div>
+</div>

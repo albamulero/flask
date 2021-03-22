@@ -1,0 +1,66 @@
+{% extends 'base/base.html'%} {%block content%} {% from "_macro.html" import render_formulario%}
+
+<p>{{mensaje}}</p>
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <br>
+            <br>
+
+            <form name="sentMessage" id="formulario" method="POST" action="/create">
+                <div class="form-group col-xs-12 floating-label-form-group cont">
+
+                
+            
+                    <input type="hidden" name="csrf_token" value="{{csrf_token()}}">
+
+                    <br><label for="floatingInput">Numero de serie</label><br>
+                    {{render_formulario(form.num_serie, class="form-control", value="")}}
+                    
+                    <br><label for="floatingInput">Nombre</label><br>
+                    {{render_formulario(form.nombre, class="form-control", value="")}}
+                    
+                    <br><label for="floatingInput">Apellido</label><br>
+                    {{render_formulario(form.apellido, class="form-control", value="")}}
+                    
+                    <br><label for="floatingInput">Movil</label><br>
+                    {{render_formulario(form.movil, class="form-control",value="")}}
+                    
+                    <br><label for="floatingInput">Email</label><br>
+                    {{render_formulario(form.email, class="form-control", type="email",value="")}}
+
+                    <br><label for="floatingInput">Provincia</label><br>
+                    {{render_formulario(form.provincia, class="form-control",value="")}}
+
+                    <br><label for="floatingInput">Pais</label><br>
+                    {{render_formulario(form.pais, class="form-control",value="")}}
+
+                    <br>
+            
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-center">
+                        <input class="btn btn-primary" type="submit" value="Añadir">
+                    </div>
+                    
+                    <br>
+
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-center">
+                        <input class="btn btn-primary" value="Ver Usuarios" onclick="location.href='/ver'">
+                    </div>
+            
+                </div>
+            
+            
+            </form>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+
+
+{%endblock%}}
